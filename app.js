@@ -1,8 +1,8 @@
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript
 
 alert("Bem vindo ao jogo do numero secreto!")
-
-let numeroSecreto = parseInt(Math.random() * 100 + 1)
+let numeroMaximo = 100;
+let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1)
 console.log(numeroSecreto);
 let chute;
 let tentativas = 1;
@@ -10,11 +10,10 @@ let tentativas = 1;
 // enquanto chute for diferente de numeroSecreto;
 while (chute != numeroSecreto) {
 
-    chute = prompt("Digite um numero entre 1 a 100");
+    chute = prompt(`Digite um numero entre 1 a ${numeroMaximo}`);
     // se o chute for igual ao numero secreto
     if (chute == numeroSecreto) {
         break;
-        alert(`Voce acertou o numero secreto! -> ${numeroSecreto} com ${tentativas} tentativas.`);
     } else {
         if (chute > numeroSecreto) {
             alert(`O numero secreto é menor que ${chute}`);
